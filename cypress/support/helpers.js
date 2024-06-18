@@ -13,18 +13,21 @@ export const getUniqueEmail = () => `fake_+${uuid()}@email.com`;
 //1 character minimum max is unlimited??, every character allowed, name and surname can be the same
 export const getRandomName = () => {
     let text = "";
-    const possible = "AABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-    for (let i = 0; i < 1; i++)
+    const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    const length = Math.floor(Math.random() * 30) + 1; // Random length between 1 and 30
+    for (let i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
     return text;
 };
 
-//8 character minimum
 export const getRandomPassword = () => {
     let text = "";
     const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-    for (let i = 0; i < 8; i++)
+    const length = Math.floor(Math.random() * 23) + 8; // Random length between 8 and 30
+    for (let i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
     return text;
 };
 
